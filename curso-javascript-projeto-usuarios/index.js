@@ -1,16 +1,21 @@
 var fields = document.querySelectorAll("#form-user-create [name]");
 var user = {};
 
-fields.forEach((field, index)=>{
+document.getElementById("form-user-create").addEventListener("submit", function(e){
+
+    e.preventDefault();
     
-    if(field.name == "gender" && field.checked){
-        
-        user[field.name] = field.value;
-    }else{
+    fields.forEach((field, index)=>{
+    
+        if(field.name == "gender" && field.checked){
+            
+            user[field.name] = field.value;
+        }else{
+    
+            user[field.name] = field.value;
+        }
+    });    
 
-        user[field.name] = field.value;
-    }
+    console.log(user);
 });
-
-console.log(user);
 
